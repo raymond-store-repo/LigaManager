@@ -1,0 +1,2 @@
+# LigaManager
+Basketball GM
