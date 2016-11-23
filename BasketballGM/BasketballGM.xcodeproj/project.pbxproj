@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4D29519F1DE6251900C3BFBD /* DummyPossessionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D29519E1DE6251900C3BFBD /* DummyPossessionEngine.swift */; };
+		4D2B46301DE63644008C4681 /* NameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B462F1DE63644008C4681 /* NameGenerator.swift */; };
+		4D2B46321DE637F3008C4681 /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B46311DE637F3008C4681 /* RandomNumberGenerator.swift */; };
+		4D2B46351DE638DD008C4681 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B46341DE638DD008C4681 /* Player.swift */; };
+		4D2B46371DE63B7A008C4681 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B46361DE63B7A008C4681 /* Team.swift */; };
 		4DB7C2A51DE61F02000A04FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7C2A41DE61F02000A04FD /* AppDelegate.swift */; };
 		4DB7C2A71DE61F02000A04FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7C2A61DE61F02000A04FD /* ViewController.swift */; };
 		4DB7C2AA1DE61F02000A04FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB7C2A81DE61F02000A04FD /* Main.storyboard */; };
@@ -20,6 +24,10 @@
 
 /* Begin PBXFileReference section */
 		4D29519E1DE6251900C3BFBD /* DummyPossessionEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyPossessionEngine.swift; sourceTree = "<group>"; };
+		4D2B462F1DE63644008C4681 /* NameGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameGenerator.swift; sourceTree = "<group>"; };
+		4D2B46311DE637F3008C4681 /* RandomNumberGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNumberGenerator.swift; sourceTree = "<group>"; };
+		4D2B46341DE638DD008C4681 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		4D2B46361DE63B7A008C4681 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		4DB7C2A11DE61F02000A04FD /* BasketballGM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasketballGM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB7C2A41DE61F02000A04FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DB7C2A61DE61F02000A04FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,8 +54,28 @@
 		4D2951A01DE6299D00C3BFBD /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				4DB7C2BA1DE620A1000A04FD /* Game.swift */,
+				4DB7C2BC1DE62258000A04FD /* BasketballGame.swift */,
 			);
 			name = Game;
+			sourceTree = "<group>";
+		};
+		4D2B462E1DE6362B008C4681 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4D2B462F1DE63644008C4681 /* NameGenerator.swift */,
+				4D2B46311DE637F3008C4681 /* RandomNumberGenerator.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		4D2B46331DE638D3008C4681 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4D2B46341DE638DD008C4681 /* Player.swift */,
+				4D2B46361DE63B7A008C4681 /* Team.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		4DB7C2981DE61F02000A04FD = {
@@ -69,6 +97,8 @@
 		4DB7C2A31DE61F02000A04FD /* BasketballGM */ = {
 			isa = PBXGroup;
 			children = (
+				4D2B46331DE638D3008C4681 /* Models */,
+				4D2B462E1DE6362B008C4681 /* Utils */,
 				4DB7C2B61DE61F0F000A04FD /* Engine */,
 				4DB7C2A41DE61F02000A04FD /* AppDelegate.swift */,
 				4DB7C2A61DE61F02000A04FD /* ViewController.swift */,
@@ -85,8 +115,6 @@
 			children = (
 				4D2951A01DE6299D00C3BFBD /* Game */,
 				4DB7C2B91DE61F32000A04FD /* Possessions */,
-				4DB7C2BA1DE620A1000A04FD /* Game.swift */,
-				4DB7C2BC1DE62258000A04FD /* BasketballGame.swift */,
 			);
 			name = Engine;
 			sourceTree = "<group>";
@@ -177,8 +205,12 @@
 				4DB7C2A51DE61F02000A04FD /* AppDelegate.swift in Sources */,
 				4D29519F1DE6251900C3BFBD /* DummyPossessionEngine.swift in Sources */,
 				4DB7C2BD1DE62258000A04FD /* BasketballGame.swift in Sources */,
+				4D2B46301DE63644008C4681 /* NameGenerator.swift in Sources */,
 				4DB7C2B81DE61F2E000A04FD /* PossessionEngine.swift in Sources */,
 				4DB7C2BB1DE620A1000A04FD /* Game.swift in Sources */,
+				4D2B46351DE638DD008C4681 /* Player.swift in Sources */,
+				4D2B46371DE63B7A008C4681 /* Team.swift in Sources */,
+				4D2B46321DE637F3008C4681 /* RandomNumberGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

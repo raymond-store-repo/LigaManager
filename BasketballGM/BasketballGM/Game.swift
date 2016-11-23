@@ -8,6 +8,9 @@
 
 protocol Game
 {
+  var homeTeam: Team { get }
+  var awayTeam: Team { get }
+  
   var homeScore: Int { get }
   var awayScore: Int { get }
   

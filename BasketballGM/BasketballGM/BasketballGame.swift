@@ -10,12 +10,22 @@ import Foundation
 
 class BasketballGame: Game
 {
+  var homeTeam: Team
+  var awayTeam: Team
+  
   var awayScore = 0
   var homeScore = 0
   var timeElapsed = 0
   var quarter = 1
   
   var possessionCount = 0
+  
+  init()
+  {
+    /* We still don't have the concept of positions */
+    homeTeam = Team()
+    awayTeam = Team()
+  }
   
   func addTimeElapsed(time: Int)
   {
@@ -53,10 +63,12 @@ class BasketballGame: Game
     {
       while timeElapsed < quarter * 12 * 60
       {
-        let result = DummyPossessionEngine.runPossession(game: self)
+        let possession = possessionCount % 2 == 0 ? Possession.home : Possession.away;
+        
+        let result = DummyPossessionEngine.runPossession(game: self, possession: possession)
         let score = evaluateResult(result: result)
         
-        if (possessionCount % 2 == 0)
+        if (possession == .home)
         {
           print("Home finised possession");
           addHomeScore(score: score)
@@ -66,6 +78,8 @@ class BasketballGame: Game
           print("Away finished possession");
           addAwayScore(score: score)
         }
+        
+        /* TODO HERE: DEADBALL/TIMEOUT -> SUBSTITUTION */
         
         possessionCount += 1
         addTimeElapsed(time: 24)

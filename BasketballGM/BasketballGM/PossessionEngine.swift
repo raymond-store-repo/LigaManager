@@ -14,7 +14,13 @@ enum PossessionResult
   case timeElapsed(Int) // Note: 24-Second shotclock violation counts as a turnover
 }
 
+enum Possession
+{
+  case home
+  case away
+}
+
 protocol PossessionEngine
 {
-  static func runPossession(game: Game) -> PossessionResult
+  static func runPossession(game: Game, possession: Possession) -> PossessionResult
 }

@@ -10,25 +10,39 @@ import Foundation
 
 class DummyPossessionEngine: PossessionEngine
 {
-  static func runPossession(game: Game) -> PossessionResult
+  static func runPossession(game: Game, possession: Possession) -> PossessionResult
   {
-    let randomShit = randomInt(min:0, max:1)
+    let randomShit = RandomNumberGenerator.randomInt(min:0, max:1)
     var result: PossessionResult
+    let playerPair = randomPlayerPair(game: game, possession: possession)
+    let offensePlayer = playerPair.offense
+    let defensePlayer = playerPair.defense
     
-    switch randomShit {
-    case 0:
-      let randomScore = randomInt(min:1, max:3)
-      result = .scored(randomScore)
-    case 1:
-      result = .missedFieldGoal
-    default:
-      result = .turnover
+    print("\(offensePlayer) matched up against \(defensePlayer)")
+    
+    switch randomShit
+    {
+      case 0:
+        let randomScore = RandomNumberGenerator.randomInt(min:1, max:3)
+        result = .scored(randomScore)
+      case 1:
+        result = .missedFieldGoal
+      default:
+        result = .turnover
     }
     return result
   }
   
-  private static func randomInt(min: Int, max:Int) -> Int
+  private static func randomPlayerPair(game: Game, possession: Possession) -> (offense: Player, defense: Player)
   {
-    return min + Int(arc4random_uniform(UInt32(max - min + 1)))
+    let magicNumber = RandomNumberGenerator.randomInt(max: 4)
+    if (possession == .home)
+    {
+      return (game.homeTeam.onCourtPlayers[magicNumber], game.awayTeam.onCourtPlayers[magicNumber])
+    }
+    else
+    {
+      return (game.awayTeam.onCourtPlayers[magicNumber], game.homeTeam.onCourtPlayers[magicNumber])
+    }
   }
 }
