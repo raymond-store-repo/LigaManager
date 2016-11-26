@@ -17,6 +17,8 @@ class Player: CustomStringConvertible, CustomDebugStringConvertible
   var longRangeRating: Int
   var freeThrowRating: Int
   
+  var dribbleRating: Int
+  
   var reboundRating: Int
   var blockRating: Int
   var stealRating: Int
@@ -25,10 +27,12 @@ class Player: CustomStringConvertible, CustomDebugStringConvertible
   {
     name = NameGenerator.generateFirstName() + " " + NameGenerator.generateLastName()
     
-    closeRangeRating = RandomNumberGenerator.randomInt(max: 99)
-    midRangeRating = RandomNumberGenerator.randomInt(max: 99)
-    longRangeRating = RandomNumberGenerator.randomInt(max: 99)
-    freeThrowRating = RandomNumberGenerator.randomInt(max: 99)
+    closeRangeRating = RandomNumberGenerator.randomInt(min: 70, max: 99)
+    midRangeRating = RandomNumberGenerator.randomInt(min: 50, max: 99)
+    longRangeRating = RandomNumberGenerator.randomInt(min: 20, max: 99)
+    freeThrowRating = RandomNumberGenerator.randomInt(min: 50, max: 99)
+    
+    dribbleRating = RandomNumberGenerator.randomInt(min: 70, max: 99)
     
     reboundRating = RandomNumberGenerator.randomInt(max: 99)
     blockRating = RandomNumberGenerator.randomInt(max: 99)
@@ -49,6 +53,7 @@ class Player: CustomStringConvertible, CustomDebugStringConvertible
             + "FTR: \(freeThrowRating)"
             + "RR: \(reboundRating)"
             + "BR: \(blockRating)"
-            + "SR: \(stealRating)")
+            + "SR: \(stealRating)"
+            + "Dribble: \(dribbleRating)")
   }
 }
