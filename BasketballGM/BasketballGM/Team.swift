@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Team
+class Team: CustomDebugStringConvertible
 {
   private let players: [Player]
   
@@ -24,5 +24,15 @@ class Team
     }
     players = createdPlayers
     onCourtPlayers = Array(players.prefix(5))
+  }
+  
+  var debugDescription: String
+  {
+    var description = ""
+    for player in players
+    {
+      description += "\(player.debugDescription)"
+    }
+    return description
   }
 }
