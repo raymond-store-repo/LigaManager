@@ -25,6 +25,9 @@ class BasketballGame: Game
     /* We still don't have the concept of positions */
     homeTeam = Team()
     awayTeam = Team()
+    
+    debugPrint("Home Team \(homeTeam)")
+    debugPrint("Away Team \(awayTeam)")
   }
   
   func addTimeElapsed(time: Int)
@@ -37,7 +40,6 @@ class BasketballGame: Game
     if (score > 0)
     {
       print("Home scored!! \(score)")
-      print("Score \(homeScore) - \(awayScore)")
     }
     homeScore += score
   }
@@ -47,7 +49,6 @@ class BasketballGame: Game
     if (score > 0)
     {
       print("Away scored!! \(score)")
-      print("Score \(homeScore) - \(awayScore)")
     }
     awayScore += score
   }
@@ -98,6 +99,9 @@ class BasketballGame: Game
         score = value
       case let .timeElapsed(value):
         score = value
+      case let .turnover(defensiveResult):
+        score = 0
+        print("Turnover! \(defensiveResult)")
       default:
         score = 0
     }
